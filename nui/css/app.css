@@ -1,0 +1,63 @@
+.container {
+    display: none;
+    width: 550px;
+    height: 300px;
+    padding: 0 0 1.5% 0;
+    background-color: rgb(255, 255, 255);
+    margin: 18% auto 0 auto;
+    border-radius: 3px;
+    border-bottom: 6px solid rgb(0, 89, 156);
+    text-align: center;
+    background-image: url(https://kalmar.se/images/18.364737c6173fe910fbb18e/1597914913434/Polisen%20liggande%20utan%20bakgrund.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position-x: 10px;
+    background-position-y:  5px;
+}
+
+.buttons {
+    position: fixed;
+    margin: 10% auto 0 8.5%;
+}
+
+button {
+    margin: 2% auto 0 0;
+    height: 50px;
+    width: 100px;
+    background-color: rgba(2, 115, 202);
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+button:focus {
+    background-color: rgba(2, 115, 202);
+}
+
+.playerName {
+    position: fixed;
+    color: rgb(0, 0, 0);
+    /* border: 1px solid rgb(0, 0, 0); */
+    width: 500px;
+    font-size: 19px;
+    margin: 5% 0 0 1.2%;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+}
+
+#toast-container {
+    /* margin: 10% 0 0 0; */
+    bottom: auto !important;
+    right: auto !important;
+    top: 44%;
+    left: 55.2%; 
+    max-height: 150px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 170px;
+}
+
+.toast {
+    background-color: rgb(0, 89, 156);
+    border-radius: 3px;
+}
