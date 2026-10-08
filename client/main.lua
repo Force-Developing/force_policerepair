@@ -275,7 +275,8 @@ function OpenRepairMenu(pointId)
         title = locale("menu_repair"),
         description = locale("menu_repair_description", math.floor(GetRepairDuration() / 1000)),
         icon = "wrench",
-        onSelect = function() RepairVehicle(pointId) end,
+        -- its own thread: the repair awaits the server and a progress bar
+        onSelect = function() CreateThread(function() RepairVehicle(pointId) end) end,
       },
       {
         title = locale("menu_condition"),
