@@ -1,0 +1,22 @@
+{
+  "open_menu": "Repair vehicle",
+  "open_menu_textui": "[E] Repair vehicle",
+  "menu_repair": "Repair vehicle",
+  "menu_repair_description": "The mechanic repairs your vehicle (%s seconds)",
+  "menu_condition": "Vehicle condition",
+  "menu_condition_description": "Check the engine and body health",
+  "condition": "Engine: %s%%, body: %s%%",
+  "repairing": "Repairing vehicle...",
+  "repaired": "Your vehicle has been repaired.",
+  "cancelled": "Repair cancelled.",
+  "repair_failed": "The repair could not be finished.",
+  "not_allowed": "You don't have access to this repair bay.",
+  "not_on_duty": "You have to be on duty.",
+  "too_far": "Drive the vehicle into the repair bay.",
+  "cooldown": "Wait a moment before the next repair.",
+  "busy": "A repair is already running.",
+  "no_vehicle": "You have to sit in the driver seat of a vehicle.",
+  "wrong_vehicle": "This vehicle can't be repaired here.",
+  "not_ready": "The repair bay is still starting. Try again in a moment.",
+  "server_no_response": "The server didn't respond. Try again."
+}

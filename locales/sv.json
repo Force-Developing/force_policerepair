@@ -1,0 +1,22 @@
+{
+  "open_menu": "Reparera fordon",
+  "open_menu_textui": "[E] Reparera fordon",
+  "menu_repair": "Reparera fordon",
+  "menu_repair_description": "Mekanikern reparerar ditt fordon (%s sekunder)",
+  "menu_condition": "Fordonets skick",
+  "menu_condition_description": "Kolla motorns och karossens hälsa",
+  "condition": "Motor: %s%%, kaross: %s%%",
+  "repairing": "Lagar fordonet...",
+  "repaired": "Ditt fordon är reparerat.",
+  "cancelled": "Reparationen avbröts.",
+  "repair_failed": "Reparationen kunde inte slutföras.",
+  "not_allowed": "Du har inte tillgång till den här verkstaden.",
+  "not_on_duty": "Du måste vara i tjänst.",
+  "too_far": "Kör in fordonet i verkstaden.",
+  "cooldown": "Vänta en stund innan nästa reparation.",
+  "busy": "En reparation pågår redan.",
+  "no_vehicle": "Du måste sitta i förarsätet på ett fordon.",
+  "wrong_vehicle": "Det här fordonet kan inte repareras här.",
+  "not_ready": "Verkstaden startar fortfarande. Försök igen om en stund.",
+  "server_no_response": "Servern svarade inte. Försök igen."
+}
