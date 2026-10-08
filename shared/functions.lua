@@ -54,6 +54,14 @@ local function isVector(value)
       and tonumber(value.z) and true or false
 end
 
+--- Heading of a vec4 (nil for a vec3: reading .w from a vector3 errors in cfx)
+local function headingOf(value)
+  local t = type(value)
+  if t == "vector4" then return value.w + 0.0 end
+  if t == "table" and tonumber(value.w) then return tonumber(value.w) + 0.0 end
+  return nil
+end
+
 --- Validates Config.Points once per side. Broken entries are skipped with a red console line.
 local function PreparePoints()
   if type(Config.Points) ~= "table" then
@@ -78,6 +86,7 @@ local function PreparePoints()
       point.id = id
       point.label = type(point.label) == "string" and point.label or id
       point.radius = tonumber(point.radius) or 3.0
+      point.heading = headingOf(point.coords)
       point.models = nil
       if type(point.vehicles) == "table" and next(point.vehicles) ~= nil then
         point.models = {}
@@ -94,9 +103,13 @@ local function PreparePoints()
         if type(ped) ~= "table" or type(ped.model) ~= "string" or not isVector(ped.coords) then
           Log("error", ("Repair point '%s': the ped needs a model and coords, it is disabled"):format(id))
           point.ped = nil
-        elseif ped.workCoords ~= nil and not isVector(ped.workCoords) then
-          Log("error", ("Repair point '%s': ped.workCoords is not a vector, the ped stays at its post"):format(id))
-          ped.workCoords = nil
+        else
+          ped.heading = headingOf(ped.coords) or 0.0
+          if ped.workCoords ~= nil and not isVector(ped.workCoords) then
+            Log("error", ("Repair point '%s': ped.workCoords is not a vector, the ped stays at its post"):format(id))
+            ped.workCoords = nil
+          end
+          ped.workHeading = ped.workCoords and (headingOf(ped.workCoords) or ped.heading) or nil
         end
       else
         point.ped = nil
