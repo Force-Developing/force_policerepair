@@ -152,7 +152,8 @@ local function prepareVehicle(point, vehicle)
     if point.heading then SetEntityHeading(vehicle, point.heading) end
     SetVehicleOnGroundProperly(vehicle)
   end
-  SetVehicleEngineOn(vehicle, false, true, true)
+  -- auto-start stays enabled, so throttle starts the engine again if the repair is cancelled
+  SetVehicleEngineOn(vehicle, false, true, false)
   FreezeEntityPosition(vehicle, true)
   SetVehicleDoorOpen(vehicle, HOOD, false, false)
 end
@@ -189,6 +190,7 @@ local function fixVehicle(vehicle)
   SetVehicleBodyHealth(vehicle, 1000.0)
   SetVehiclePetrolTankHealth(vehicle, 1000.0)
   SetVehicleUndriveable(vehicle, false)
+  SetVehicleEngineOn(vehicle, true, true, false)
 end
 
 --- Repairs the vehicle the player drives at a bay. The server checks the job, seat, distance, time and cooldown.
